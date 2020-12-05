@@ -1,0 +1,64 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+">
+
+  <title>Sudan White Pages</title>
+</head>
+<body style="background-size: 100%;
+background-repeat: no-repeat;
+background-image: url(https://salesboxai.com/wp-content/uploads/2019/12/Contact-us-background-1.jpg);">
+  <div class="container" ng-controller="AppCtrl" >
+    <p style="float: right;"><a href="/register">Registration</a></p>
+    <h1>Phone Number Book </h1>
+    <h3 ng-if="!username.name" style="color:green">Hello</h3>
+    <h3 ng-if="username.name" style="color:red">Hello {{username.name}}</h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>         
+          <th scope="col">Job</th>
+          <th scope="col">Number</th>
+          <th scope="col">Location</th>
+          <th scope="col">Operations</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control" ng-model="contact.name"></td>
+          <td><input class="form-control" ng-model="contact.job"></td>
+          <td><input class="form-control" ng-model="contact.number"></td>
+          <td><input class="form-control" ng-model="contact.location"></td>
+          <td><button class="fa fa-plus btn btn-primary" ng-click="addContact()"></button></td>
+          <td><button class="fa fa-check btn btn-success" ng-click="update()"></button>&nbsp;&nbsp;<button class="fa fa-trash btn btn-info" ng-click="deselect()"></button></td>
+        </tr>
+        <tr ng-repeat="contact in contactlist">
+          <td><b>{{contact.name}}</b></td>
+          <td><b>{{contact.job}}</b></td>
+          <td><b>{{contact.number}}</b></td>
+          <td><b>{{contact.location}}</b></td>
+          <td><button class="fa fa-trash btn btn-danger btn-sm" ng-click="remove(contact._id)"></button></td>
+          <td><button class="fa fa-pencil btn btn-warning btn-sm" ng-click="edit(contact._id)"></button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+
+
+
+<p></p>
+<br></br>
+<br></br>
+
+</body>
+</html>
