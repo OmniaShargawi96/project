@@ -3,7 +3,7 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('contactlist', ['contactlist']);
+var db = mongojs('mongodb://1234:1234@cluster0.8x6zb.mongodb.net/project0?retryWrites=true&w=majority', ['contactlist']);
 var db_users = mongojs('users', ['users']);
 var bodyParser = require('body-parser');
 const {LocalStorage} = require("node-localstorage");
