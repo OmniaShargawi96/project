@@ -3,8 +3,8 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('contactlist', ['contactlist']);
-var db_users = mongojs('users', ['users']);
+var db = mongojs('mongodb://MYUSERNAME:MYPASSWORD@localhost:27017/mongodb://uvmzbhyb5i1kdvwjutwx:wtmqr4qLQiDiIHs3Ioca@b5umy9fevfjs9qo-mongodb.services.clever-cloud.com:27017/b5umy9fevfjs9qo', ['contactlist']);
+var db_users = mongojs('mongodb://ujdsmhblq0at1vdfkbm1:qZk1wx1wECjeXaiHgOW7@bxhe2droyrr2wmo-mongodb.services.clever-cloud.com:27017/bxhe2droyrr2wmo', ['users']);
 var bodyParser = require('body-parser');
 const {LocalStorage} = require("node-localstorage");
 var session = new LocalStorage('./sessions'); 
